@@ -12,7 +12,7 @@ import Footer from './components/layout/Footer';
 function App() {
   return (
     <>
-      <Header fonts="gmarket" />
+      <Header fonts="nexon" />
       <Main>
         <Slider />
         <Image attr={["section", "gmarket", "container"]} />
