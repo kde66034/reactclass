@@ -8,6 +8,8 @@ import "swiper/css/pagination";
 
 function Slider() {
     return (
+    <section id="sliderType" class="slider__wrap scroll">
+        <h2 class="blind">슬라이드 영역</h2>
         <div className="slider__inner">
           <Swiper 
             autoplay={{
@@ -63,6 +65,7 @@ function Slider() {
             </SwiperSlide>
           </Swiper>
         </div>
+    </section>
     );
 }
 
