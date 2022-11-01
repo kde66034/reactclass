@@ -6,10 +6,50 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+const sliderInfo = [
+    {
+        subject: "BAKING CLASS",
+        title: "AWESOME BAKING",
+        desc: "훌륭한 제빵사가 되고 싶으신가요? <br/> 별빛제빵교실에 오신 것을 환영합니다!",
+        btnLink: "/",
+        btnClass: "black",
+    },
+    {
+        subject: "BAKING CLASS",
+        title: "AWESOME BAKING",
+        desc: "훌륭한 제빵사가 되고 싶으신가요? <br/> 별빛제빵교실에 오신 것을 환영합니다!",
+        btnLink: "/",
+        btnClass: "black",
+    },
+    {
+        subject: "BAKING CLASS",
+        title: "AWESOME BAKING",
+        desc: "훌륭한 제빵사가 되고 싶으신가요? <br/> 별빛제빵교실에 오신 것을 환영합니다!",
+        btnLink: "/",
+        btnClass: "black",
+    },
+]
+
+const SliderCont = ({subject, title, desc, btnLink, btnClass}) => {
+    return (
+        <SwiperSlide>
+            <div className="desc container">
+                <span>{subject}</span>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+                <div className="btn">
+                    <a href={`${btnLink}`}>자세히 보기</a>
+                    <a href={`${btnLink}`} className={`${btnClass}`}>사이트 보기</a>
+                </div>
+            </div>
+        </SwiperSlide>
+    )
+}
+
 function Slider() {
     return (
-    <section id="sliderType" class="slider__wrap scroll">
-        <h2 class="blind">슬라이드 영역</h2>
+    <section id="sliderType" className="slider__wrap scroll">
+        <h2 className="blind">슬라이드 영역</h2>
         <div className="slider__inner">
           <Swiper 
             autoplay={{
@@ -21,7 +61,16 @@ function Slider() {
             modules={[Navigation, Pagination, Autoplay]} 
             className="mySwiper">
 
-            <SwiperSlide>
+            {sliderInfo.map(info => (
+                <SliderCont subject={info.subject} 
+                            title={info.title}
+                            desc={info.desc}
+                            btnLink={info.btnLink}
+                            btnClass={info.btnClass}
+                />
+            ))} 
+
+            {/* <SwiperSlide>
                 <div class="desc container">
                     <span>BAKING CLASS</span>
                     <h3>AWESOME BAKING</h3>
@@ -62,7 +111,7 @@ function Slider() {
                         <a href="/" class="black">사이트 보기</a>
                     </div>
                 </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
         </div>
     </section>
