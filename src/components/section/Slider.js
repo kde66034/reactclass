@@ -6,44 +6,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const sliderInfo = [
-    {
-        subject: "BAKING CLASS",
-        title: "AWESOME BAKING",
-        desc: "훌륭한 제빵사가 되고 싶으신가요? <br/> 별빛제빵교실에 오신 것을 환영합니다!",
-        btnLink: "/",
-        btnClass: "black",
-    },
-    {
-        subject: "BAKING CLASS",
-        title: "AWESOME BAKING",
-        desc: "훌륭한 제빵사가 되고 싶으신가요? <br/> 별빛제빵교실에 오신 것을 환영합니다!",
-        btnLink: "/",
-        btnClass: "black",
-    },
-    {
-        subject: "BAKING CLASS",
-        title: "AWESOME BAKING",
-        desc: "훌륭한 제빵사가 되고 싶으신가요? <br/> 별빛제빵교실에 오신 것을 환영합니다!",
-        btnLink: "/",
-        btnClass: "black",
-    },
-]
-
-const SliderCont = ({subject, title, desc, btnLink, btnClass}) => {
-    return (
-        <SwiperSlide>
-            <div className="desc container">
-                <span>{subject}</span>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-                <div className="btn">
-                    <a href={`${btnLink}`}>자세히 보기</a>
-                    <a href={`${btnLink}`} className={`${btnClass}`}>사이트 보기</a>
-                </div>
-            </div>
-        </SwiperSlide>
-    )
+const sliderInfo = {
+    subject: "BAKING CLASS",
+    title: "AWESOME BAKING",
+    desc: "훌륭한 제빵사가 되고 싶으신가요? <br/> 별빛제빵교실에 오신 것을 환영합니다!",
+    btnLink: "/",
+    btnClass: "black",
 }
 
 function Slider() {
@@ -61,44 +29,46 @@ function Slider() {
             modules={[Navigation, Pagination, Autoplay]} 
             className="mySwiper">
 
-            {sliderInfo.map(info => (
-                <SliderCont subject={info.subject} 
-                            title={info.title}
-                            desc={info.desc}
-                            btnLink={info.btnLink}
-                            btnClass={info.btnClass}
-                />
-            ))} 
-
+            <SwiperSlide>
+                <div class="desc container">
+                    <span>{sliderInfo.subject}</span>
+                    <h3>{sliderInfo.title}</h3>
+                    <p>
+                        {sliderInfo.desc}
+                    </p>
+                    <div class="btn">
+                        <a href={`${sliderInfo.btnLink}`}>자세히 보기</a>
+                        <a href={`${sliderInfo.btnLink}`} class={`${sliderInfo.btnClass}`}>사이트 보기</a>
+                    </div>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div class="desc container">
+                    <span>{sliderInfo.subject}</span>
+                    <h3>{sliderInfo.title}</h3>
+                    <p>
+                        {sliderInfo.desc}
+                    </p>
+                    <div class="btn">
+                        <a href={`${sliderInfo.btnLink}`}>자세히 보기</a>
+                        <a href={`${sliderInfo.btnLink}`} class={`${sliderInfo.btnClass}`}>사이트 보기</a>
+                    </div>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div class="desc container">
+                    <span>{sliderInfo.subject}</span>
+                    <h3>{sliderInfo.title}</h3>
+                    <p>
+                        {sliderInfo.desc}
+                    </p>
+                    <div class="btn">
+                        <a href={`${sliderInfo.btnLink}`}>자세히 보기</a>
+                        <a href={`${sliderInfo.btnLink}`} class={`${sliderInfo.btnClass}`}>사이트 보기</a>
+                    </div>
+                </div>
+            </SwiperSlide>
             {/* <SwiperSlide>
-                <div class="desc container">
-                    <span>BAKING CLASS</span>
-                    <h3>AWESOME BAKING</h3>
-                    <p>
-                        훌륭한 제빵사가 되고 싶으신가요? <br/>
-                        별빛제빵교실에 오신 것을 환영합니다!
-                    </p>
-                    <div class="btn">
-                        <a href="/">자세히 보기</a>
-                        <a href="/" class="black">사이트 보기</a>
-                    </div>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="desc container">
-                    <span>BAKING CLASS</span>
-                    <h3>AWESOME BAKING</h3>
-                    <p>
-                        훌륭한 제빵사가 되고 싶으신가요? <br/>
-                        별빛제빵교실에 오신 것을 환영합니다!
-                    </p>
-                    <div class="btn">
-                        <a href="/">자세히 보기</a>
-                        <a href="/" class="black">사이트 보기</a>
-                    </div>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
                 <div class="desc container">
                     <span>BAKING CLASS</span>
                     <h3>AWESOME BAKING</h3>
